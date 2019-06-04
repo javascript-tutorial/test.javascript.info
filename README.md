@@ -12,7 +12,11 @@ This repository hosts the translation of <https://javascript.info> in Test.
 - Fork the repository, translate and send a PR when done.
     - PR title should match article title, the bot will write it's number into the issue.
 
+<<<<<<< HEAD
 If you're a maintainer, you can just translate and push, but please check articles as translated in the [issue](https://github.com/javascript-tutorial/test.javascript.info/issues/26), for others to see that.
+=======
+See <https://javascript.info/translate> for the details.
+>>>>>>> a0266c574c0ab8a0834dd38ed65e7e4ee27f9cdb
 
 If you're just a newcomer, without write access to the repo, please kindly allow maintainers to review and merge your translation.
    
