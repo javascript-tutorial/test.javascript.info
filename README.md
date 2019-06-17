@@ -12,7 +12,11 @@ This repository hosts the translation of <https://javascript.info> in Test.
 - Fork the repository, translate and send a PR when done.
     - PR title should match article title, the bot will write it's number into the issue.
 
+<<<<<<< HEAD
 If you're a maintainer, you can just translate and push, but please check articles as translated in the [issue](https://github.com/javascript-tutorial/test.javascript.info/issues/26), for others to see that.
+=======
+See <https://javascript.info/translate> for the details.
+>>>>>>> 027933531e121650120f7e8385f691de99af12d2
 
 If you're just a newcomer, without write access to the repo, please kindly allow maintainers to review and merge your translation.
    
@@ -117,6 +121,7 @@ Some files, usually tasks, have YAML metadata at the top, delimited by `---`:
 importance: 5
 
 ---
+<<<<<<< HEAD
 ...
 ```
 
@@ -137,3 +142,7 @@ Please don't translate or remove the `[#...]` part, it's for URL anchors.
 You can run the tutorial server locally to see how the translation looks.
 
 The server and install instructions are at <https://github.com/javascript-tutorial/server>. 
+=======
+♥  
+Ilya Kantor @iliakan
+>>>>>>> 027933531e121650120f7e8385f691de99af12d2
