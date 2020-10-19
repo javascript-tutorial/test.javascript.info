@@ -1,6 +1,10 @@
 # The Modern JavaScript Tutorial in Test
 
+<<<<<<< HEAD
 This repository hosts the translation of <https://javascript.info> in Test.
+=======
+This repository hosts the English content of the Modern JavaScript Tutorial, published in [https://javascript.info](https://javascript.info).
+>>>>>>> d6e88647b42992f204f57401160ebae92b358c0d
 
 **That's how you can contribute:**
 
@@ -40,9 +44,15 @@ The folder is named `N-url`, where `N` – is the number for sorting (articles a
 
 The folder has one of files:
 
+<<<<<<< HEAD
 - `index.md` for a section,
 - `article.md` for an article,
 - `task.md` for a task formulation (+`solution.md` with the solution text if any).
+=======
+  - `index.md` stands for a chapter
+  - `article.md` stands for an article
+  - `task.md` stands for a task (solution must be provided in `solution.md` file as well)
+>>>>>>> d6e88647b42992f204f57401160ebae92b358c0d
 
 A file starts with the `# Title Header`, and then the text in Markdown-like format, editable in a simple text editor. 
 
