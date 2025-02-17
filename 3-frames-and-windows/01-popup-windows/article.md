@@ -7,7 +7,7 @@ Basically, you just run:
 window.open('https://javascript.info/')
 ```
 
-...And it will open a new window with given URL. Most modern browsers are configured to open new tabs instead of separate windows.
+...And it will open a new window with given URL. Most modern browsers are configured to open url in new tabs instead of separate windows.
 
 Popups exist from really ancient times. The initial idea was to show another content without closing the main window. As of now, there are other ways to do that: we can load content dynamically with [fetch](info:fetch) and show it in a dynamically generated `<div>`. So, popups is not something we use everyday.
 
@@ -15,7 +15,7 @@ Also, popups are tricky on mobile devices, that don't show multiple windows simu
 
 Still, there are tasks where popups are still used, e.g. for OAuth authorization (login with Google/Facebook/...), because:
 
-1. A popup is a separate window with its own independent JavaScript environment. So opening a popup from a third-party non-trusted site is safe.
+1. A popup is a separate window which has its own independent JavaScript environment. So opening a popup from a third-party, non-trusted site is safe.
 2. It's very easy to open a popup.
 3. A popup can navigate (change URL) and send messages to the opener window.
 
@@ -37,26 +37,6 @@ button.onclick = () => {
 ```
 
 This way users are somewhat protected from unwanted popups, but the functionality is not disabled totally.
-
-What if the popup opens from `onclick`, but after `setTimeout`? That's a bit tricky.
-
-Try this code:
-
-```js run
-// open after 3 seconds
-setTimeout(() => window.open('http://google.com'), 3000);
-```
-
-The popup opens in Chrome, but gets blocked in Firefox.
-
-...If we decrease the delay, the popup works in Firefox too:
-
-```js run
-// open after 1 seconds
-setTimeout(() => window.open('http://google.com'), 1000);
-```
-
-The difference is that Firefox treats a timeout of 2000ms or less are acceptable, but after it -- removes the "trust", assuming that now it's "outside of the user action". So the first one is blocked, and the second one is not.
 
 ## window.open
 
@@ -87,9 +67,9 @@ Settings for `params`:
 
 There is also a number of less supported browser-specific features, which are usually not used. Check <a href="https://developer.mozilla.org/en/DOM/window.open">window.open in MDN</a> for examples.
 
-## Example: a minimalistic window   
+## Example: a minimalistic window
 
-Let's open a window with minimal set of features just to see which of them browser allows to disable:
+Let's open a window with minimal set of features, just to see which of them browser allows to disable:
 
 ```js run
 let params = `scrollbars=no,resizable=no,status=no,location=no,toolbar=no,menubar=no,
@@ -120,7 +100,7 @@ Rules for omitted settings:
 
 ## Accessing popup from window
 
-The `open` call returns a reference to the new window. It can be used to manipulate it's properties, change location and even more.
+The `open` call returns a reference to the new window. It can be used to manipulate its properties, change location and even more.
 
 In this example, we generate popup content from JavaScript:
 
@@ -192,7 +172,7 @@ newWindow.onload = function() {
 ```
 
 
-## Scrolling and resizing
+## Moving and resizing
 
 There are methods to move/resize a window:
 
@@ -239,7 +219,7 @@ There's also `window.onscroll` event.
 
 Theoretically, there are `window.focus()` and `window.blur()` methods to focus/unfocus on a window. And there are also `focus/blur` events that allow to catch the moment when the visitor focuses on a window and switches elsewhere.
 
-Although, in practice they are severely limited, because in the past evil pages abused them. 
+Although, in practice they are severely limited, because in the past evil pages abused them.
 
 For instance, look at this code:
 
@@ -257,10 +237,10 @@ Still, there are some use cases when such calls do work and can be useful.
 
 For instance:
 
-- When we open a popup, it's might be a good idea to run a `newWindow.focus()` on it. Just in case, for some OS/browser combinations it ensures that the user is in the new window now.
+- When we open a popup, it might be a good idea to run `newWindow.focus()` on it. Just in case, for some OS/browser combinations it ensures that the user is in the new window now.
 - If we want to track when a visitor actually uses our web-app, we can track `window.onfocus/onblur`. That allows us to suspend/resume in-page activities, animations etc. But please note that the `blur` event means that the visitor switched out from the window, but they still may observe it. The window is in the background, but still may be visible.
 
-## Summary   
+## Summary
 
 Popup windows are used rarely, as there are alternatives: loading and displaying information in-page, or in iframe.
 
